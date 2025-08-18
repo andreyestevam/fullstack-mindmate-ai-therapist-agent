@@ -16,7 +16,6 @@
   "dependencies": {
     "@google/genai": "^1.14.0",
     "@google/generative-ai": "^0.24.1",
-    "@types/next-auth": "^3.13.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
@@ -26,7 +25,6 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.17.1",
     "morgan": "^1.10.1",
-    "next-auth": "^4.24.11",
     "uuid": "^11.1.0",
     "winston": "^3.17.0"
   },
@@ -39,7 +37,6 @@
     "@types/morgan": "^1.9.10",
     "@types/node": "^20.0.0",
     "@types/uuid": "^9.0.0",
-    "@types/winston": "^2.4.4",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
