@@ -584,8 +584,9 @@ export default function DashboardPage() {
                                 </div>
                             </CardContent>
                         </Card>
-
-                        {/* Today's Overview Card */}
+                        
+                        
+                        {/* To be fully implemented - Today's Overview Card 
                         <Card className="border-primary/10">
                         <CardHeader>
                             <div className="flex items-center justify-between">
@@ -632,6 +633,7 @@ export default function DashboardPage() {
                             </div>
                         </CardContent>
                         </Card>
+                        */}
                     </div>
 
                     {/* Content grid for games */}
