@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
             );
         }
 
-        const response = await fetch(`${BACKEND_API_URL}/chat/sessions`, {
+        const response = await fetch(`${BACKEND_API_URL}/api/chat/sessions`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

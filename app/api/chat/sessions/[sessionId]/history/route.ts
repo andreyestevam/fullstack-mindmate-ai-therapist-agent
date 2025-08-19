@@ -7,7 +7,7 @@ export async function GET(req: NextRequest, {params}: {params: {sessionId: strin
         const {sessionId} = params;
         console.log(`Getting chat history for session ${sessionId}`);
 
-        const response = await fetch(`${BACKEND_API_URL}/chat/sessions/${sessionId}/history`,
+        const response = await fetch(`${BACKEND_API_URL}/api/chat/sessions/${sessionId}/history`,
             {
                 method: "GET",
                 headers: {
