@@ -100,7 +100,7 @@ export const sendMessage = async (req: Request, res: Response) => {
         await inngest.send(event);
 
         // Generate therapeutic response using Gemini
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
         
         const therapeuticPrompt = `You are an AI therapist assistant. Your role is to:
         1. Provide empathetic and supportive responses
