@@ -489,8 +489,8 @@ export default function DashboardPage() {
 
                 {/* Main grid layout */}
                 <div className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-                        {/* Quick actions card */}
+                    <div className="grid grid-cols-1 gap-4">
+                        {/* Quick actions card - now takes full width */}
                         <Card className="border-primary/10 relative overflow-hidden group">
                             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-primary/10 to-transparent" />
                             
@@ -536,8 +536,8 @@ export default function DashboardPage() {
                                             </div>
                                         </Button>
 
-                                        {/* Mood tracking and activity features*/}
-                                        <div className="grid grid-cols-2 gap-3">
+                                        {/* Mood tracking and activity features - responsive grid */}
+                                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                                             <Button
                                                 variant="outline"
                                                 className={cn("flex flex-col h-[120px] px-4 py-3 group/mood hover:border-primary/50",
