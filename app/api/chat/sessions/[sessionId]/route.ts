@@ -5,7 +5,20 @@ const BACKEND_API_URL = process.env.BACKEND_API_URL || "http://localhost:3001";
 export async function GET(req: NextRequest, {params}: {params: {sessionId: string}}){
     try{
         const {sessionId} = params;
-        const response = await fetch(`${BACKEND_API_URL}/api/chat/sessions/${sessionId}/history`);
+        
+        // Forward authorization header from the frontend request
+        const authHeader = req.headers.get("Authorization");
+        const headers: Record<string, string> = {
+            "Content-Type": "application/json",
+        };
+        
+        if (authHeader) {
+            headers["Authorization"] = authHeader;
+        }
+        
+        const response = await fetch(`${BACKEND_API_URL}/api/chat/sessions/${sessionId}/history`, {
+            headers,
+        });
         
         if(!response.ok){
             throw new Error(`HTTP error! Status: ${response.status}`);
@@ -35,13 +48,21 @@ export async function POST(req: NextRequest, { params }: { params: { sessionId: 
         );
         }
 
+        // Forward authorization header from the frontend request
+        const authHeader = req.headers.get("Authorization");
+        const headers: Record<string, string> = {
+            "Content-Type": "application/json",
+        };
+        
+        if (authHeader) {
+            headers["Authorization"] = authHeader;
+        }
+
         const response = await fetch(
         `${BACKEND_API_URL}/api/chat/sessions/${sessionId}/messages`,
         {
             method: "POST",
-            headers: {
-            "Content-Type": "application/json",
-            },
+            headers,
             body: JSON.stringify({ message }),
         }
         );

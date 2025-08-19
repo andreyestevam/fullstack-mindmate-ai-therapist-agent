@@ -7,12 +7,20 @@ export async function GET(req: NextRequest, {params}: {params: {sessionId: strin
         const {sessionId} = params;
         console.log(`Getting chat history for session ${sessionId}`);
 
+        // Forward authorization header from the frontend request
+        const authHeader = req.headers.get("Authorization");
+        const headers: Record<string, string> = {
+            "Content-Type": "application/json",
+        };
+        
+        if (authHeader) {
+            headers["Authorization"] = authHeader;
+        }
+
         const response = await fetch(`${BACKEND_API_URL}/api/chat/sessions/${sessionId}/history`,
             {
                 method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers,
             }
         );
 
